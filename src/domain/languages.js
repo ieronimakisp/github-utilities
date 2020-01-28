@@ -1,6 +1,4 @@
 module.exports = {
-    GO: "Go",
-    JAVA: "Java",
-    PYTHON: "Python",
-    JS: "JavaScript",
-}
+  JAVA: 'Java',
+  JS: 'JavaScript',
+};
