@@ -39,21 +39,20 @@ const mockHttpClientJavaResponse = {
   },
 };
 
-const expected = [
-  {
-    language: 'JavaScript',
-    openIssuesCount: 7,
-  },
-  {
-    language: 'Java',
-    openIssuesCount: 40,
-  },
-];
-
 describe('Github REST Store', () => {
   describe('getIssuesForLanguages test', () => {
     it('should return the accumulated sum of open issues count when two languages are provided', async () => {
       const languages = ['JavaScript', 'Java'];
+      const expected = [
+        {
+          language: 'JavaScript',
+          openIssuesCount: 7,
+        },
+        {
+          language: 'Java',
+          openIssuesCount: 40,
+        },
+      ];
       mockHttpClient.get
         .mockReturnValueOnce(mockHttpClientJavaScriptResponse)
         .mockReturnValueOnce(mockHttpClientJavaResponse);
@@ -63,11 +62,12 @@ describe('Github REST Store', () => {
 
     it('should return no stats instances when no languages are provided', async () => {
       const languages = [];
+      const expected = [];
       mockHttpClient.get
         .mockReturnValueOnce(mockHttpClientJavaScriptResponse)
         .mockReturnValueOnce(mockHttpClientJavaResponse);
       const stats = await githubStore.getIssuesForLanguages(languages);
-      expect(stats).toEqual([]);
+      expect(stats).toEqual(expected);
     });
   });
 });
