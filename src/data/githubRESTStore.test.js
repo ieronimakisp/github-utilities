@@ -62,12 +62,12 @@ describe('Github REST Store', () => {
     });
 
     it('should return no stats instances when no languages are provided', async () => {
-      const languages = ['JavaScript', 'Java'];
+      const languages = [];
       mockHttpClient.get
         .mockReturnValueOnce(mockHttpClientJavaScriptResponse)
         .mockReturnValueOnce(mockHttpClientJavaResponse);
       const stats = await githubStore.getIssuesForLanguages(languages);
-      expect(stats).toEqual(expected);
+      expect(stats).toEqual([]);
     });
   });
 });
