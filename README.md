@@ -51,3 +51,4 @@ The app is designed to use a layered architecture. The architecture is heavily i
 - Maximize test coverage
 - Document the API using [Swagger](https://swagger.io/)
 - Add continuous integration and deployment (e.g deploy using [CircleCI](https://circleci.com/))
+- Use a logger library
