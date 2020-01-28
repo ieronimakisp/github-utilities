@@ -12,6 +12,6 @@ module.exports = {
     apiToken: process.env.GITHUB_API_TOKEN,
     apiBaseUri: 'https://api.github.com/',
     searchPath: 'search/',
-    queryLimit: 10,
+    queryLimit: process.env.QUERY_LIMIT | 10,
   },
 };
