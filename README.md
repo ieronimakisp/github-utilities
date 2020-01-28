@@ -8,7 +8,7 @@ The API currently serves a single route, `/stats`, which accumulates the number 
 
 ## Prerequisites
 
-Define an .env file at the root directory of the project containing all the environment variables needed. You can find the keys needed for the env vars key-value pairs in the [configuration](https://github.com/ieronimakisp/Futurice-private/tree/master/src/config) file.
+Define an .env file at the root directory of the project containing all the environment variables needed. You can find the keys needed for the env vars key-value pairs in the [configuration](https://github.com/ieronimakisp/github-utilities/tree/master/src/config) file.
 
 ## Using npm
 
@@ -31,11 +31,11 @@ npm test
 
 The app is designed to use a layered architecture. The architecture is heavily influenced by the [Clean Architecture](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html). It aims to separate concerns and make the app easier to test and maintain. This also makes it easier to replace a routing framework or a data store, as the core business rules are independent of these layers implementation. Specifically, the following simple division is applied in the app structure:
 
-- [domain](https://github.com/ieronimakisp/Futurice-private/tree/master/src/domain) folder contains modules defining the core entities (models) and business rules (services) of the app. They are the least likely to change when something external (e.g database, routing) changes and thus do not depend on external components. In our use case, this layer will not change if Github data are fetched through the Github GraphQL API. This increases extensibility and maintainability.
+- [domain](https://github.com/ieronimakisp/github-utilities/tree/master/src/domain) folder contains modules defining the core entities (models) and business rules (services) of the app. They are the least likely to change when something external (e.g database, routing) changes and thus do not depend on external components. In our use case, this layer will not change if Github data are fetched through the Github GraphQL API. This increases extensibility and maintainability.
 
-- [router](https://github.com/ieronimakisp/Futurice-private/tree/master/src/router) folder contains modules concerned with HTTP routing (routes, HTTP specifics like requests, responses, headers, params validation etc). Routing is implemented using Express.js but we can easily swap it with another framework.
+- [router](https://github.com/ieronimakisp/github-utilities/tree/master/src/router) folder contains modules concerned with HTTP routing (routes, HTTP specifics like requests, responses, headers, params validation etc). Routing is implemented using Express.js but we can easily swap it with another framework.
 
-- [data](https://github.com/ieronimakisp/Futurice-private/tree/master/src/data) folder contains modules (repositories) concerned with data fetching and posting tasks. Current implementation is uitilizing Github Rest API v3.
+- [data](https://github.com/ieronimakisp/github-utilities/tree/master/src/data) folder contains modules (repositories) concerned with data fetching and posting tasks. Current implementation is uitilizing Github Rest API v3.
 
 # Routing
 
