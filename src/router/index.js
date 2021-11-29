@@ -14,6 +14,7 @@ app
   .use(compress);
 
 function create({ statsService }) {
+  app.get('/', (req, res) => {res.json("Hello")})
   app.use('/stats', statsRoutes.create(statsService));
   app.use(errorHandler);
   app.use(notFoundMiddleware);
